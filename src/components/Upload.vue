@@ -1,11 +1,12 @@
 <template>
 <div>
     <form enctype="multipart/form-data">
-        <input type="file" name="uploadImage" accept="image/*" @change="imageUpload($event);"/>
+        <input type="file" name="uploadImage" accept="image/*" @change="initImageData($event)"/>
+        <button type="submit" @click="imageUpload($event)">Upload Image</button>
     </form>
 </div>
-<div>
-    <p>
+<div >
+    <p class="braille-output" v-if="buttonClicked">
     {{brailleThing}}
     </p>
 
@@ -23,27 +24,34 @@ export default {
     name: "upload-component",
     data(){
         return{
-            brailleThing:''
+            brailleThing:'',
+            buttonClicked:false,
+            imageData:''
         }
         
     },
     methods:{
-
+    // Capture Image data from Image submission, and save it to imageData variable 
+    initImageData(event){
+        this.imageData = event.target.files[0];
+    },
+    // Upload Image to server, receive Image as Braille as a response from the server
     imageUpload(event){
-        if(!event.target.files[0]){
+        event.preventDefault();
+        if(this.imageData.length == 0){
+            alert('Please select an Image');
             return;
         }
-        this.brailleThing = '';
-        axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
         let data = new FormData();
-        data.append('name','image-upload');
-        data.append('file',event.target.files[0]);
+        data.append('file',this.imageData);
+        this.brailleThing = '';
         axios.post(url,data,{
             headers:{
                 'Content-Type':'multipart/form-data',
             },
         })
         .then(res =>{
+            this.buttonClicked = true;
             this.brailleThing = res.data;
         }).catch(err =>{
             console.error(err);
@@ -56,7 +64,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.braille-output{
+    border: 2px solid
+}
 p{
     font-size: 20px;
+    max-width:80ch;
+    text-align: center;
+    padding: 20px 10px;
+    border-radius: 6px;
 }
 </style>

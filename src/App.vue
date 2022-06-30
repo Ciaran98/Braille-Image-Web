@@ -8,17 +8,25 @@
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@300&display=swap');
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  margin-left:5vw;
+  margin-right:5vw;
+  font-family: 'Gantari', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
 nav a {
+  font-size: 30px;
   font-weight: bold;
   color: #2c3e50;
 }
 nav a.router-link-exact-active {
   color: #42b983;
+}
+button{
+  all: unset;
 }
 </style>

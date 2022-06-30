@@ -1,6 +1,6 @@
 <template>
-<div>
-This is the home page
+<div class="home-text">
+  <p>Welcome to my Image to Braille conversion app! To use it, simply upload an image, and the application will provide you with a version of the image in braille.</p>
 </div>
 </template>
 

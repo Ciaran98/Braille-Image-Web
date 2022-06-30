@@ -15,3 +15,10 @@ export default {
   }
 }
 </script>
+<style>
+div > p{
+  font-family: 'Gantari', sans-serif;
+  font-size: 20px;
+}
+
+</style>

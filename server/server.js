@@ -7,8 +7,8 @@ const fs = require('fs');
 const Jimp  = require('jimp');
 var bodyParser = require('body-parser');
 const HEADER_OFFSET = 54;
-const WIDTH = 160;
-const HEIGHT = 160;
+let WIDTH = 80;
+let HEIGHT = 80;
 let rows = 0;
 let data_to_send ='';
 let bmpbuff;
@@ -17,10 +17,6 @@ app.use(bodyParser.json({limit:'30mb'}));
 app.use(bodyParser.urlencoded({extended:true}));
 const cors = require('cors');
 app.use(cors());
-app.get('/',(req,res)=>{
-    res.send('hello world');
-});
-
 app.post('/',(req,res)=>{
     data_to_send = '';
     let data = req.files.file.data;
@@ -28,10 +24,10 @@ app.post('/',(req,res)=>{
         image
         .resize(WIDTH,HEIGHT)
         .background(0xf1f1f1)
-        .getBuffer(Jimp.MIME_BMP,(err,buffer)=>{
+        .getBuffer(Jimp.MIME_BMP,(err,imgBuffer)=>{
             if(err) throw err;
-            for(let i = HEADER_OFFSET; i< buffer.length; i+=6){
-                data_to_send+=String.fromCharCode(PixelsToBinary(buffer,i,WIDTH));
+            for(let i = HEADER_OFFSET; i< imgBuffer.length; i+=6){
+                data_to_send+=String.fromCharCode(PixelsToBinary(imgBuffer,i,WIDTH));
                 rows++;
                 if(rows % (WIDTH/2) == 0){
                     data_to_send+='\n';
@@ -50,8 +46,7 @@ app.listen(port,()=>{
 });
 
 function PixelsToBinary(Data, i, Width){
-    let binary = 10240;
-    if(addColorVals(Data[i],Data[i+1],Data[i+2]) < 128) binary+=1;
+    let binary = 10241;
     if(addColorVals(Data[i+3],Data[i+4],Data[i+5]) < 128) binary+=8;
     if(addColorVals(Data[i+(Width*3)],Data[i+(Width*3)+1],Data[i+(Width*3)+2]) < 128) binary+=2;
     if(addColorVals(Data[i+(Width*3)+3],Data[i+(Width*3)+4],Data[i+(Width*3)+5]) < 128) binary+= 16;
