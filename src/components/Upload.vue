@@ -5,11 +5,10 @@
         <button type="submit" @click="imageUpload($event)">Upload Image</button>
     </form>
 </div>
-<div >
-    <p class="braille-output" v-if="buttonClicked">
-    {{brailleThing}}
-    </p>
-
+<div class="braille-container">
+    <pre class="braille-output" v-if="buttonClicked">
+    <p>{{brailleThing}}</p>
+    </pre>
 </div>
 
 </template>
@@ -69,9 +68,15 @@ export default {
 }
 p{
     font-size: 20px;
-    max-width:80ch;
     text-align: center;
     padding: 20px 10px;
     border-radius: 6px;
+    overflow: auto;
+}
+@media(max-width:768px){
+    p{
+        font-size: 14px;
+        padding:3px 3px;
+    }
 }
 </style>

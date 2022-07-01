@@ -30,7 +30,7 @@ app.post('/',(req,res)=>{
                 data_to_send+=String.fromCharCode(PixelsToBinary(imgBuffer,i,WIDTH));
                 rows++;
                 if(rows % (WIDTH/2) == 0){
-                    data_to_send+='\n';
+                    data_to_send+='\r\n';
                     i+=((WIDTH*3)*3);
                 }
             }
