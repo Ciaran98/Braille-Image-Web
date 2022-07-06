@@ -19,7 +19,7 @@
 
 <script>
 import axios from "axios";
-const url = "http://localhost:3000/";
+const url = "http://localhost:8080/";
 const FormData = require("form-data");
 
 export default {
