@@ -19,7 +19,7 @@
 
 <script>
 import axios from "axios";
-const url = "http://localhost:8080/";
+const url = "https://braille-image.herokuapp.com/#/";
 const FormData = require("form-data");
 
 export default {
