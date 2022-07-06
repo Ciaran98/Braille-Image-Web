@@ -66,15 +66,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.braille-output {
-  border: 2px solid;
-}
 p {
   font-size: 20px;
   text-align: center;
   padding: 20px 10px;
   border-radius: 6px;
   overflow: auto;
+}
+button {
+}
+button:hover {
 }
 @media (max-width: 768px) {
   p {
