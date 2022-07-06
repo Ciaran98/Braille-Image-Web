@@ -30,15 +30,4 @@ h1,
 h2 {
   font-weight: 300;
 }
-a:visited {
-  color: #2c3e50;
-  text-decoration: none;
-}
-a {
-  color: #2c3e50;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
 </style>

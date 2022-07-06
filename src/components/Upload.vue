@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="form-container">
     <form enctype="multipart/form-data">
       <input
         type="file"
@@ -73,14 +73,24 @@ p {
   border-radius: 6px;
   overflow: auto;
 }
-button {
+div.form-container {
+  display: flex;
+  justify-content: center;
 }
-button:hover {
+div.form-container > form {
+  margin: 20px;
+  padding: 20px;
+}
+form > * {
+  margin: 10px;
 }
 @media (max-width: 768px) {
   p {
     font-size: 14px;
     padding: 3px 3px;
+  }
+  div.form-container {
+    flex-direction: column;
   }
 }
 </style>

@@ -43,9 +43,11 @@ ul {
 }
 li {
   display: inline;
-  font-size: 20px;
+  font-size: 30px;
   padding-left: 20px;
   padding-right: 20px;
+  justify-content: center;
+  list-style: none;
 }
 a:visited {
   color: #2c3e50;
@@ -61,6 +63,15 @@ a:hover {
 div.header-nav {
   display: flex;
   font-size: 30px;
+}
+@media (max-width: 768px) {
+  div.header-nav {
+    flex-direction: column;
+  }
+  li {
+    text-align: center;
+    display: flex;
+  }
 }
 div.header-nav > h1 {
   all: unset;
