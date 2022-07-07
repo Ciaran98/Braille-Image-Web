@@ -115,6 +115,9 @@ div.header-nav {
     font-size: 15px;
     padding: 10px 20px;
   }
+  p {
+    font-size: 14px !important;
+  }
 }
 div.header-nav > h1 {
   all: unset;
