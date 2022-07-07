@@ -71,6 +71,8 @@ div.header-nav {
   li {
     text-align: center;
     display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 div.header-nav > h1 {

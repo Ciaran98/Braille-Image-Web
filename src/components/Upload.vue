@@ -11,10 +11,12 @@
     </form>
   </div>
   <div class="braille-container">
+    <p v-if="!buttonClicked">Your converted image will go here</p>
     <pre class="braille-output" v-if="buttonClicked">
     <p>{{brailleThing}}</p>
     </pre>
   </div>
+  <hr />
 </template>
 
 <script>
@@ -88,9 +90,6 @@ form > * {
   p {
     font-size: 14px;
     padding: 3px 3px;
-  }
-  div.form-container {
-    flex-direction: column;
   }
 }
 </style>
