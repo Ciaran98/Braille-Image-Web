@@ -11,11 +11,34 @@
     <ul>
       <li>
         <a href="https://www.linkedin.com/in/ciaran-melarkey-694469194/"
-          >Linked In</a
+          ><img
+            class="ico linkedInIco"
+            src="../public/linkedin.svg"
+            alt="LinkedIn"
+          /><br />
+          LinkedIn</a
         >
       </li>
-      <li><a href="https://github.com/Ciaran98">GitHub</a></li>
-      <li><a href="mailto:ciaran.melarkey@hotmail.com">Email</a></li>
+      <li>
+        <a href="mailto:ciaran.melarkey@hotmail.com"
+          ><img
+            class="ico greyIco"
+            src="../public/envelope.svg"
+            alt="Email"
+          /><br />
+          Email</a
+        >
+      </li>
+      <li>
+        <a href="https://github.com/Ciaran98"
+          ><img
+            class="ico greyIco"
+            src="../public/github.svg"
+            alt="GitHub"
+          /><br />
+          GitHub</a
+        >
+      </li>
     </ul>
   </div>
 </template>
@@ -34,20 +57,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #080808;
 }
+.ico {
+  width: 34px;
+}
+.greyIco {
+  filter: invert(5%) sepia(52%) saturate(13%) hue-rotate(322deg) brightness(96%)
+    contrast(74%);
+}
+.linkedInIco {
+  filter: invert(26%) sepia(97%) saturate(1279%) hue-rotate(176deg)
+    brightness(100%) contrast(103%);
+}
 div.footer {
   display: flex;
   justify-content: center;
+  margin-top: auto;
 }
 ul {
   all: unset;
+  max-width: fit-content;
 }
 li {
-  display: inline;
-  font-size: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
   justify-content: center;
+  font-size: 20px;
   list-style: none;
+  text-align: center;
+  float: left;
+  padding: 10px 60px;
+}
+li:hover {
+  background-color: #e0e0e0;
+  border-radius: 6px;
 }
 a:visited {
   color: #2c3e50;
@@ -68,11 +108,12 @@ div.header-nav {
   div.header-nav {
     flex-direction: column;
   }
+  ul {
+    width: 100%;
+  }
   li {
-    text-align: center;
-    display: flex;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    font-size: 15px;
+    padding: 10px 20px;
   }
 }
 div.header-nav > h1 {
