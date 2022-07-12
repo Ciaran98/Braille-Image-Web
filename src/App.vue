@@ -48,6 +48,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Gantari:wght@300&display=swap");
 body {
   background-color: #f7f7f7;
+  width: 100%;
 }
 #app {
   margin-left: 10vw;
@@ -71,7 +72,7 @@ body {
 div.footer {
   display: flex;
   justify-content: center;
-  margin-top: auto;
+  width: 100%;
 }
 ul {
   all: unset;
@@ -87,7 +88,7 @@ li {
 }
 li:hover {
   background-color: #e0e0e0;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 a:visited {
   color: #2c3e50;
