@@ -8,7 +8,6 @@
       to add an image, and press the submit button to upload it to the server.
       No images are saved on this site, the website takes your submitted image,
       and converts it to a stream of bits to be used by an algorithm.
-      <u>Nothing is saved</u>.
     </p>
     <hr />
   </div>
