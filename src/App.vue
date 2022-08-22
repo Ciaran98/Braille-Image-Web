@@ -6,7 +6,9 @@
       <router-link to="/about">About</router-link>
     </nav>
   </div>
-  <router-view />
+  <div class="main-body">
+    <router-view />
+  </div>
   <div class="footer">
     <ul>
       <li>
@@ -48,7 +50,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Gantari:wght@300&display=swap");
 body {
   background-color: #f7f7f7;
-  width: 100%;
 }
 #app {
   margin-left: 10vw;
@@ -57,6 +58,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #080808;
+}
+.main-body {
+  min-height: 82vh;
 }
 .ico {
   width: 34px;

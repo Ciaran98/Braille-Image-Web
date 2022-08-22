@@ -29,6 +29,7 @@
       can email me using the link below, I am currently open to work, and I am
       very eager to get started!
     </p>
+    <hr />
   </div>
 </template>
 

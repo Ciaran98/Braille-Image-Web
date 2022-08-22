@@ -57,7 +57,6 @@ app.post("/", (req, res) => {
 
 const port = process.env.PORT || 8080;
 app.listen(port);
-console.log(`app is listening on port: ${port}`);
 
 function PixelsToBinary(Data, i, Width) {
   let binary = 10241;
